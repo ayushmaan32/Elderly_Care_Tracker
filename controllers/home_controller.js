@@ -1,3 +1,5 @@
 module.exports.home = function (req, res) {
-  res.send("home Page");
+  return res.render("home", {
+    title: "Health Tracker",
+  });
 };
