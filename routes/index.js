@@ -5,6 +5,7 @@ console.log("router");
 
 const homeController = require("../controllers/home_controller");
 
-router.use("/", homeController.home);
+router.get("/", homeController.home);
+router.use("/contacts", require("./contacts"));
 
 module.exports = router;

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="css/contacts.css" />
+
+  <!-- heading  -->
+  <div class="header">
+    <h1>Emergency Contacts</h1>
+  </div>
+
+  <!-- upload box -->
+  <form action="/contacts/addContacts" method="post">
+    <div class="input-box">
+      <label for="name">Name:</label>
+      <div class="input">
+        <input type="text" id="name" name="name"/>
+      </div>
+      <label for="phoneNumber">Number:</label>
+      <div class="input">
+        <input type="text" id="phoneNumber" name="phoneNumber" required/>
+      </div>
+
+      <button class="upload-btn">Upload</button>
+    </div>
+  </form>
+</div>
