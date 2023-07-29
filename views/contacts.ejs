@@ -1,23 +1,51 @@
 <link rel="stylesheet" href="css/contacts.css" />
 
+<div class="box">
   <!-- heading  -->
-  <div class="header">
-    <h1>Emergency Contacts</h1>
+  <div>
+    <div class="header">
+      <h1>Emergency Contacts</h1>
+    </div>
+
+    <!-- upload box -->
+    <form action="/contacts/addContacts" method="post">
+      <div class="input-box">
+        <label for="name">Name:</label>
+        <div class="input">
+          <input type="text" id="name" name="name" required />
+        </div>
+        <label for="phoneNumber">Number:</label>
+        <div class="input">
+          <input type="text" id="phoneNumber" name="phoneNumber" required />
+        </div>
+
+        <button class="upload-btn">Upload</button>
+      </div>
+    </form>
   </div>
 
-  <!-- upload box -->
-  <form action="/contacts/addContacts" method="post">
-    <div class="input-box">
-      <label for="name">Name:</label>
-      <div class="input">
-        <input type="text" id="name" name="name"/>
-      </div>
-      <label for="phoneNumber">Number:</label>
-      <div class="input">
-        <input type="text" id="phoneNumber" name="phoneNumber" required/>
-      </div>
-
-      <button class="upload-btn">Upload</button>
-    </div>
-  </form>
+  <div class="file-list">
+    <h2>Contact Lists:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% contact_lists.forEach(contact => { %>
+        <tr>
+          <td><%= contact.Name %></td>
+          <td><%= contact.Number %></td>
+          <td>
+            <button class="delete-btn">
+              <a href="/contacts/delete/<%= contact._id %>">Delete</a>
+            </button>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
 </div>

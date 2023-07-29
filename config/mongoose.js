@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/csv_upload", {
+mongoose.connect("mongodb://localhost/Elderly_care", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   family: 4,
