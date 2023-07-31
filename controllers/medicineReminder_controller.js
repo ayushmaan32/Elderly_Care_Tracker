@@ -1,4 +1,5 @@
 const Medication = require("../models/medications");
+const { scheduleMedicationReminders } = require("../schdedules/emailSchedule");
 
 module.exports.medicine = function (req, res) {
   return res.render("medicine", {
@@ -16,6 +17,7 @@ module.exports.createReminder = async function (req, res) {
       email,
     });
     await newMedication.save();
+    scheduleMedicationReminders();
     res.redirect("back"); // Redirect to a page displaying all medications
   } catch (error) {
     console.error("Error adding medication:", error);
