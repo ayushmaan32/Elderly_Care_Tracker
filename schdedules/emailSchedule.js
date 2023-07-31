@@ -2,7 +2,7 @@ const cron = require("node-cron");
 const Medication = require("../models/medications");
 const mailer = require("../mailers/mailers");
 
-console.log("Fetching medications...");
+// console.log("Fetching medications...");
 
 // Fetch all medication entries from the database (you can customize this query)
 async function scheduleMedicationReminders() {
@@ -15,13 +15,13 @@ async function scheduleMedicationReminders() {
 
       // Create the cron schedule using hours and minutes
       const cronSchedule = `${minutes} ${hours} * * *`;
-      console.log(cronSchedule);
+      // console.log(cronSchedule);
 
       // Schedule a cron job for each medication entry
       cron.schedule(
         cronSchedule,
         () => {
-          console.log("time reached", medication.email);
+          // console.log("time reached", medication.email);
           mailer.mailer(medication.email, medication.name, medication.dosage);
         },
         {
@@ -29,7 +29,7 @@ async function scheduleMedicationReminders() {
           scheduled: true,
         }
       );
-      console.log(medication.email);
+      // console.log(medication.email);
     });
 
     console.log("Medication reminder emails scheduled successfully.");

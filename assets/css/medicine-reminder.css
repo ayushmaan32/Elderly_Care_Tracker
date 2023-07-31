@@ -1,41 +1,68 @@
 /* Add some basic styling to the form container */
+
+.medicine-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .box {
-    max-width: 370px;
-    margin: 1rem;
-    padding: 20px;
-    background-color: #f9e5e5;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style the header section */
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 30px;
-    color: #007bff;
-    margin: 0;
-  }
-  
-  /* Style the form labels and input fields */
-  label {
-    font-size: 18px;
-    color: #4f4f4f;
-    margin-bottom: 8px;
-  }
-  .input-box {
-    margin-bottom: 20px;
-  }
-  .input {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-  }
-  input[type="text"],
-  input[type="email"],
-  input[type="time"] {
-    width: 100%;
-   
-  
+  /* width: 40%; */
+  margin: 1rem;
+  padding: 20px;
+  background-color: #f9e5e5;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the header section */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 30px;
+  color: #007bff;
+  margin: 0;
+}
+
+/* Style the form labels and input fields */
+label {
+  font-size: 18px;
+  color: #4f4f4f;
+  margin-bottom: 8px;
+}
+.input-box {
+  margin-bottom: 20px;
+}
+.input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="time"] {
+  width: 100%;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+.list {
+  /* border: 1px ridge rgb(98, 96, 96); */
+  border-radius: 5px;
+  width: 17rem;
+  min-height: 4rem;
+  margin: inherit;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.list button {
+  position: relative;
+  top: 4px;
+  left: 230px;
+}
