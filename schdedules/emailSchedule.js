@@ -2,9 +2,7 @@ const cron = require("node-cron");
 const Medication = require("../models/medications");
 const mailer = require("../mailers/mailers");
 
-// console.log("Fetching medications...");
-
-// Fetch all medication entries from the database (you can customize this query)
+// Fetch all medication entries from the database
 async function scheduleMedicationReminders() {
   try {
     const medications = await Medication.find({});

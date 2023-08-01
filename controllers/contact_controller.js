@@ -1,5 +1,6 @@
 const Contact = require("../models/contact");
 
+// controller for rendering emergency contacts page
 module.exports.contact = async function (req, res) {
   try {
     let contact = await Contact.find({});
@@ -13,6 +14,7 @@ module.exports.contact = async function (req, res) {
   }
 };
 
+// controller for creating a new contact
 module.exports.createContact = async function (req, res) {
   try {
     // Retrieve the data from the form submission
@@ -35,6 +37,7 @@ module.exports.createContact = async function (req, res) {
   }
 };
 
+// controller for delete the contact
 module.exports.delete = async function (req, res) {
   try {
     const Id = req.params.id;
@@ -50,6 +53,6 @@ module.exports.delete = async function (req, res) {
     return res.redirect("back");
   } catch (error) {
     console.error(error);
-    res.status(500).send("An error occurred while deleting the file.");
+    return res.status(500).send("An error occurred while deleting the file.");
   }
 };

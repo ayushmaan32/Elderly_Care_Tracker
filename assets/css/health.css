@@ -1,0 +1,114 @@
+/* styles.css */
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.container {
+  max-width: 90%;
+  margin: 1px auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.container p {
+  margin-top: 30px;
+}
+
+.container table {
+  margin-top: 30px;
+}
+
+.container table th {
+  background-color: #4f4f4f;
+  color: #fff;
+}
+
+.container table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.container form label {
+  color: #007bff;
+}
+
+.container form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.container form input[type="date"],
+form input[type="text"],
+form input[type="number"],
+form textarea {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 97%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: normal;
+}
+
+table tr:hover {
+  background-color: #f2f2f2;
+}

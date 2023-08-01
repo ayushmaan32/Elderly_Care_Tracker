@@ -1,7 +1,7 @@
 const nodeMailer = require("../config/nodemailer");
 
 exports.mailer = async (email, medicationName, dosage) => {
-  console.log(email);
+  // console.log(email);
   try {
     await nodeMailer.transporter.sendMail({
       from: "ayushmaanroy.12@gmail.com",

@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/css/health.css" />
+<div class="container">
+  <h1>Input Record</h1>
+
+  <form action="/health-tracker/addHealth" method="post">
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date" required />
+
+    <label for="weight">Weight(kg):</label>
+    <input type="text" name="weight" id="weight" required />
+
+    <label for="bloodPressure">Blood Pressure(mm/Hg):</label>
+    <input type="text" name="bloodPressure" id="bloodPressure" required />
+
+    <label for="bloodSugar">Blood Sugar Level(mg/dL):</label>
+    <input type="text" name="bloodSugar" id="bloodSugar" required />
+
+    <label for="exercise">Exercise (minutes):</label>
+    <input type="number" name="exercise" id="exercise" required />
+
+    <label for="sleep">Sleep (hours):</label>
+    <input type="number" name="sleep" id="sleep" required />
+
+    <label for="waterIntake">Water Intake(Liters):</label>
+    <input type="number" name="waterIntake" id="waterIntake" required />
+
+    <label for="notes">Notes:</label>
+    <textarea name="notes" id="notes" rows="4" cols="50"></textarea>
+
+    <button type="submit">Save Record</button>
+  </form>
+
+  <h1>Health Records List</h1>
+
+  <% if (record_lists.length > 0) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Weight (kg)</th>
+        <th>Blood Pressure(mm/Hg)</th>
+        <th>Blood Sugar (mg/dL)</th>
+        <th>Exercise (minutes)</th>
+        <th>Sleep (hours)</th>
+        <th>Water Intake (Liters)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% record_lists.forEach((record) => { %>
+      <tr>
+        <td><%= record.date.toDateString() %></td>
+        <td><%= record.weight %></td>
+        <td>
+          <%= record.bloodPressure %> (<%=
+          getBloodPressureCategory(record.bloodPressure) %>)
+        </td>
+        <td>
+          <%= record.bloodSugar %> (<%= getBloodSugarCategory(record.bloodSugar)
+          %>)
+        </td>
+        <td><%= record.exercise %></td>
+        <td><%= record.sleep %></td>
+        <td><%= record.waterIntake %></td>
+        <td><%= record.notes %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <p>No health records found.</p>
+  <% } %>
+</div>
